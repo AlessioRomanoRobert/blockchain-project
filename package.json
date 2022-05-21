@@ -1,0 +1,36 @@
+{
+  "name": "BLOCKCHAIN-PROJECT",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "babel-node ./src/service/index.js",
+    "start:2": "SET HTTP_PORT=3001&&SET P2P_PORT=5001&&SET PEERS=ws:localhost:5000&&babel-node ./src/service/index.js",
+    "start-internal": "babel-node index.js",
+    "nodemon": "nodemon --exec yarn start",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "miner": "babel-node miner.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "crypto-js": "^4.1.1",
+    "elliptic": "^6.5.4",
+    "express": "^4.17.1",
+    "uuid": "^8.3.2",
+    "ws": "^8.2.3"
+  },
+  "jest": {
+    "silent": false,
+    "verbose": true,
+    "testEnviroment": "node"
+  }
+}
